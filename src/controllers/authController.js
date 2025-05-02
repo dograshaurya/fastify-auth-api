@@ -14,7 +14,7 @@ exports.register = async (request, reply) => {
   }
 
   const user = await authService.createUser({ name, email, password });
-  return success(reply, { id: user._id, email: user.email }, 'User registered');
+  return success(reply, { id: user._id, name: user.name,email: user.email }, 'User registered');
 };
 
 exports.login = async (request, reply) => {
